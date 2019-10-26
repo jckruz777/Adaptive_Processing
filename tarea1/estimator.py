@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 def aprox_inv(A, tol):
     I = np.identity(A.shape[0]) # Matriz identidad
@@ -44,5 +45,15 @@ def solucion_problA(m, p, sigma, tol):
     return (K, error)
 
 # TEST
-k, error = solucion_problA(25, 0.5, 1, pow(10, -4))
-print("Error: " + str(error))
+#k, error = solucion_problA(25, 0.5, 1, pow(10, -4))
+#print("Error: " + str(error))
+
+def get_plot(y_min, y_max, ek_vector, x_label, y_label, title, n_points):
+
+    y = np.linspace(y_min, y_max, num=n_points)
+
+    plt.plot(ek_vector, y, 'o-')
+    plt.title(title)
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+    plt.show()
