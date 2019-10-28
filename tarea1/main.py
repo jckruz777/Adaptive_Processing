@@ -12,16 +12,16 @@ def main():
     # Variables
     error_results = []
     title = ""
-    y_label = ""
+    x_label = ""
 
     # Constantes
-    x_label = "Error General [e_k]"
+    y_label = "Error General [e_k]"
     tol = 1e-4
 
     # Caso Dimension vs Error
     if plot_type == "m":
         title = "Dimension m vs Error General e_k"
-        y_label = "Dimension [m]"
+        x_label = "Dimension [m]"
         print("Generando la grafica: " + title)
         rho = 0.5
         sigma = 1
@@ -36,7 +36,7 @@ def main():
     # Caso Sigma vs Error
     elif plot_type == "sigma":
         title = "Desviacion Estandar sigma vs Error General e_k"
-        y_label = "Desviacion Estandar [sigma]"
+        x_label = "Desviacion Estandar [sigma]"
         print("Generando la grafica: " + title)
         rho = 0.5
         m = 25
@@ -51,7 +51,7 @@ def main():
     # Caso Rho vs Error
     elif plot_type == "rho":
         title = "Constante rho vs Error General e_k"
-        y_label = "Constante [rho]"
+        x_label = "Constante [rho]"
         print("Generando la grafica: " + title)
         m = 50
         sigma = 1

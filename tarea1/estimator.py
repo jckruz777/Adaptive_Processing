@@ -76,25 +76,26 @@ def solucion_problA(m, p, sigma, tol):
     return (K, error)
 
 
-def get_plot(y_min, y_max, ek_vector, x_label, y_label, title, n_points):
+def get_plot(x_min, x_max, ek_vector, x_label, y_label, title, n_points):
     """
     Función grafica el error del estimador lineal en funcion de diferentes
     variables.
 
     Parameters:
-        y_min: Valor mínimo del eje y.
-        y_max: Valor máximo del eje y.
+        x_min: Valor mínimo del eje x.
+        x_max: Valor máximo del eje x.
         ek_vector: Vector con valores de error.
         x_label: Etiqueta del eje x.
         y_label: Etiqueta del eje y.
         title: Título de la gráfica.
-        n_points: Número de puntos del eje y.
+        n_points: Número de puntos.
     """
 
-    y = np.linspace(y_min, y_max, num=n_points)
+    x = np.linspace(x_min, x_max, num=n_points)
 
-    plt.plot(ek_vector, y, 'o-')
+    plt.plot(x, ek_vector, 'o-')
     plt.title(title)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
+    plt.grid()
     plt.show()
