@@ -42,9 +42,11 @@ def main():
         m = 25
         sigma_min = 0.1
         sigma_max = 5.0
+        sigma = 0
         step = 1
         n_points = (sigma_max - sigma_min)*10/step
-        for sigma in range(int(sigma_min * 10), int(sigma_max * 10), step):
+        for value in range(int(sigma_min * 10), int(sigma_max * 10), step):
+            sigma += sigma_min
             k, error = estimator.solucion_problA(m, rho, sigma, tol)
             error_results.append(error)
         estimator.get_plot(sigma_min, sigma_max, error_results, x_label, y_label, title, n_points)
@@ -57,9 +59,11 @@ def main():
         sigma = 1
         rho_min = 0.01
         rho_max = 0.99
+        rho = 0
         step = 1
         n_points = (rho_max - rho_min)*100/step
-        for rho in range(int(rho_min * 100), int(rho_max * 100), step):
+        for value in range(int(rho_min * 100), int(rho_max * 100), step):
+            rho += rho_min
             k, error = estimator.solucion_problA(m, rho, sigma, tol)
             error_results.append(error)
         estimator.get_plot(rho_min, rho_max, error_results, x_label, y_label, title, n_points)
